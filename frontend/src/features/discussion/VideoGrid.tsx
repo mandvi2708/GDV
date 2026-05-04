@@ -1,6 +1,6 @@
 'use client';
 
-import { Mic, MicOff, Video, VideoOff, PhoneOff, Settings, MonitorUp, MoreHorizontal, Maximize2, ShieldCheck, Zap } from 'lucide-react';
+import { Mic, MicOff, Video, VideoOff, PhoneOff, Settings, MonitorUp, MoreHorizontal, Maximize2, ShieldCheck, Zap, Bot } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useWebRTC } from './useWebRTC';
 import { useAuthStore } from '@/store/useAuthStore';
