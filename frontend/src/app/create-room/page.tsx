@@ -150,14 +150,14 @@ export default function CreateRoomPage() {
                 <div className="space-y-4">
                   <AIOption 
                     checked={formData.aiModerator}
-                    onChange={(val) => setFormData({ ...formData, aiModerator: val })}
+                    onChange={(val: boolean) => setFormData({ ...formData, aiModerator: val })}
                     icon={<Zap className="w-5 h-5 text-primary" />}
                     title="AI Moderator"
                     desc="Real-time sentiment & summaries"
                   />
                   <AIOption 
                     checked={formData.aiParticipant}
-                    onChange={(val) => setFormData({ ...formData, aiParticipant: val })}
+                    onChange={(val: boolean) => setFormData({ ...formData, aiParticipant: val })}
                     icon={<Sparkles className="w-5 h-5 text-accent" />}
                     title="AI Participant"
                     desc="Gemini-driven discussion input"
@@ -203,7 +203,13 @@ export default function CreateRoomPage() {
   );
 }
 
-function PrivacyOption({ active, onClick, icon, title, desc }: any) {
+function PrivacyOption({ active, onClick, icon, title, desc }: {
+  active: boolean;
+  onClick: () => void;
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}) {
   return (
     <button
       type="button"
@@ -223,7 +229,13 @@ function PrivacyOption({ active, onClick, icon, title, desc }: any) {
   );
 }
 
-function AIOption({ checked, onChange, icon, title, desc }: any) {
+function AIOption({ checked, onChange, icon, title, desc }: { 
+  checked: boolean; 
+  onChange: (val: boolean) => void; 
+  icon: React.ReactNode; 
+  title: string; 
+  desc: string; 
+}) {
   return (
     <label className="flex items-center justify-between p-5 rounded-[24px] bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition-all group">
       <div className="flex items-center gap-4">
